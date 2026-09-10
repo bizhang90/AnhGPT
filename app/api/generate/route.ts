@@ -82,8 +82,10 @@ export async function POST(request: Request) {
       upstreamForm.append("output_format", outputFormat);
       upstreamForm.append("n", String(n));
 
+      // OpenAI's image edit endpoint expects multiple input images as an array.
+      // Repeating the singular `image` field causes a duplicate-parameter error.
       for (const file of files) {
-        upstreamForm.append("image", file, file.name || "reference.png");
+        upstreamForm.append("image[]", file, file.name || "reference.png");
       }
 
       upstreamResponse = await fetch(OPENAI_IMAGE_EDIT_URL, {
