@@ -2,9 +2,14 @@ import "./globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "AnhGPT Images | Bee Creative Hub",
+  title: "Trình tạo ảnh bằng ChatGPT | Bee Creative Hub",
   description:
-    "Công cụ tạo và chỉnh sửa ảnh bằng GPT-Image, hỗ trợ tự nhập khóa API OpenAI trên giao diện.",
+    "Trình tạo và chỉnh sửa hình ảnh bằng ChatGPT, hỗ trợ GPT-Image 2.5 Sunburst, Flare và tự nhập khóa API OpenAI trên giao diện.",
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
