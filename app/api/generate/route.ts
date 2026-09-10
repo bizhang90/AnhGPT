@@ -45,25 +45,25 @@ export async function POST(request: Request) {
     const n = Number(clean(formData.get("n"), "1"));
 
     if (!apiKey) {
-      return NextResponse.json({ error: "Missing API key." }, { status: 400 });
+      return NextResponse.json({ error: "Vui lòng nhập khóa API OpenAI." }, { status: 400 });
     }
 
     if (!prompt) {
-      return NextResponse.json({ error: "Prompt is required." }, { status: 400 });
+      return NextResponse.json({ error: "Vui lòng nhập mô tả hình ảnh." }, { status: 400 });
     }
 
     if (!isValidCustomSize(size)) {
       return NextResponse.json(
         {
           error:
-            "Invalid size. Use auto or WIDTHxHEIGHT. Width/height must be multiples of 16, each edge <= 3840, total pixels between 655,360 and 8,294,400, and aspect ratio between 1:3 and 3:1.",
+            "Kích thước không hợp lệ. Hãy dùng Tự động hoặc dạng RỘNGxCAO; hai cạnh phải là bội số của 16, không vượt quá 3840 px và tỷ lệ nằm trong khoảng 1:3 đến 3:1.",
         },
         { status: 400 }
       );
     }
 
     if (!Number.isFinite(n) || n < 1 || n > 4) {
-      return NextResponse.json({ error: "n must be between 1 and 4." }, { status: 400 });
+      return NextResponse.json({ error: "Số lượng ảnh phải từ 1 đến 4." }, { status: 400 });
     }
 
     const files = formData
@@ -117,7 +117,7 @@ export async function POST(request: Request) {
     const data = await upstreamResponse.json();
 
     if (!upstreamResponse.ok) {
-      const message = data?.error?.message || "OpenAI request failed.";
+      const message = data?.error?.message || "Yêu cầu tới OpenAI không thành công.";
       return NextResponse.json({ error: message, raw: data }, { status: upstreamResponse.status });
     }
 
@@ -127,7 +127,7 @@ export async function POST(request: Request) {
       usage: data?.usage || null,
     });
   } catch (error) {
-    const message = error instanceof Error ? error.message : "Unexpected server error.";
+    const message = error instanceof Error ? error.message : "Đã xảy ra lỗi máy chủ.";
     return NextResponse.json({ error: message }, { status: 500 });
   }
 }
