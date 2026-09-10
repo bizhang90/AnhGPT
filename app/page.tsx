@@ -168,13 +168,13 @@ export default function HomePage() {
             className="brandLogo"
             src="/bee-creative-hub.webp"
             alt="Bee Creative Hub"
-            width={64}
-            height={64}
+            width={150}
+            height={92}
             priority
           />
           <div className="brandText">
-            <h1>AnhGPT Images</h1>
-            <p>Bee Creative Hub · Công cụ tạo và chỉnh sửa ảnh bằng GPT-Image</p>
+            <h1>Trình tạo ảnh bằng ChatGPT</h1>
+            <p>Bee Creative Hub · Tạo và chỉnh sửa hình ảnh bằng ChatGPT</p>
           </div>
         </div>
         <div className="topActions">
@@ -433,7 +433,7 @@ export default function HomePage() {
                     </div>
                     <div className="imageMeta">
                       <div className="smallText">Ảnh {index + 1}</div>
-                      <a className="downloadBtn" href={src} download={`anhgpt-image-${index + 1}.${outputFormat}`}>
+                      <a className="downloadBtn" href={src} download={`chatgpt-image-${index + 1}.${outputFormat}`}>
                         Tải xuống
                       </a>
                     </div>
