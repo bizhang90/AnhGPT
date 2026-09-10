@@ -1,23 +1,32 @@
 # AnhGPT Images
 
-A polished Next.js image-generation UI for Vercel, branded for Bee Creative Hub and built around a BYOK (Bring Your Own Key) model.
+Giao diện tạo và chỉnh sửa ảnh bằng GPT-Image cho Bee Creative Hub, triển khai trên Vercel theo mô hình **BYOK (Bring Your Own Key)**.
 
-## What it does
+## Tính năng
 
-- Users paste their own OpenAI API key directly in the UI
-- No fixed API key is required in Vercel
-- Supports text-to-image generation and reference-image / image-edit flow
-- Supports `gpt-image-2.5-sunburst`, `gpt-image-2.5-flare`, and `gpt-image-2`
+- Người dùng tự nhập OpenAI API key trên giao diện
+- Không cần gắn cứng API key trên Vercel
+- Hỗ trợ tạo ảnh từ prompt
+- Hỗ trợ chỉnh sửa / tạo ảnh bằng ảnh tham chiếu
+- Hỗ trợ `gpt-image-2.5-sunburst`, `gpt-image-2.5-flare`, `gpt-image-2`
+- Giao diện tiếng Việt
 
-## Deploy
+## Chạy local
 
 ```bash
 npm install
 npm run dev
 ```
 
-Import this repository into Vercel and deploy. No OpenAI environment variable is required for the BYOK flow.
+## Vercel
 
-## Security
+Kết nối repo `bizhang90/AnhGPT` với project Vercel và để Production Branch là `main`.
+Mỗi commit mới vào `main` sẽ tạo deployment mới.
 
-User API keys are supplied in the UI and forwarded only for the active request. Do not log request bodies or secrets in production.
+## Bảo mật
+
+API key do người dùng tự nhập và chỉ được chuyển tiếp cho request đang chạy. Không log request body hoặc secrets trong production.
+
+---
+
+Deploy sync trigger: 2026-09-10 18:16 ICT
