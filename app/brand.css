@@ -1,0 +1,26 @@
+.brandLogo {
+  width: 150px !important;
+  height: 92px !important;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+.brand {
+  gap: 18px;
+}
+
+.brandText h1 {
+  font-size: 30px;
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 760px) {
+  .brandLogo {
+    width: 118px !important;
+    height: 72px !important;
+  }
+
+  .brandText h1 {
+    font-size: 24px;
+  }
+}
