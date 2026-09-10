@@ -16,7 +16,22 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="vi">
-      <body>{children}</body>
+      <body>
+        {children}
+        <footer className="siteFooter">
+          <div className="siteFooterInner">
+            <span>Bee Creative Hub</span>
+            <span className="footerDot">•</span>
+            <a href="https://beecreativehub.com" target="_blank" rel="noreferrer">
+              beecreativehub.com
+            </a>
+            <span className="footerDot">•</span>
+            <a href="https://www.facebook.com/hientruongmkt" target="_blank" rel="noreferrer">
+              Facebook
+            </a>
+          </div>
+        </footer>
+      </body>
     </html>
   );
 }
